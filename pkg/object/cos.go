@@ -200,6 +200,7 @@ func autoCOSEndpoint(bucketName, accessKey, secretKey, token string) (string, er
 			SessionToken: token,
 		},
 	})
+	client.Conf.EnableCRC = false
 	client.UserAgent = UserAgent
 	s, _, err := client.Service.Get(ctx)
 	if err != nil {
@@ -251,6 +252,7 @@ func newCOS(endpoint, accessKey, secretKey, token string) (ObjectStorage, error)
 		},
 	})
 	client.UserAgent = UserAgent
+	client.Conf.EnableCRC = false
 	return &COS{client, uri.Host}, nil
 }
 

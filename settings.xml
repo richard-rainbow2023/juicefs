@@ -1,0 +1,169 @@
+<settings>
+    <servers>
+        <server>
+            <id>user-public</id>
+            <username>lin.zhang</username>
+            <password>Wfzc055780-</password>
+        </server>
+        <server>
+            <id>user-releases</id>
+            <username>lin.zhang</username>
+            <password>Wfzc055780-</password>
+        </server>
+        <server>
+            <id>user-snapshots</id>
+            <username>lin.zhang</username>
+            <password>Wfzc055780-</password>
+        </server>
+        <server>
+            <id>nexus</id>
+            <username>lin.zhang</username>
+            <password>Wfzc055780-</password>
+        </server>
+    </servers>
+
+    <profiles>
+        <profile>
+            <id>jdk-1.8</id>
+            <activation>
+                <jdk>1.8</jdk>
+            </activation>
+            <properties>
+                <maven.compiler.source>1.8</maven.compiler.source>
+                <maven.compiler.target>1.8</maven.compiler.target>
+                <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>dev</id>
+            <repositories>
+                <repository>
+                    <id>nexus-aliyun</id>
+                    <name>Nexus aliyun</name>
+                    <layout>default</layout>
+                    <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                </repository>
+                <repository>
+                    <id>user-public</id>
+                    <name>Kyligence Repository</name>
+                    <url>https://repository.kyligence.io/repository/maven-public
+                    </url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+                <repository>
+                    <id>user-releases</id>
+                    <name>Kyligence Repository</name>
+                    <url>https://repository.kyligence.io/repository/maven-releases
+                    </url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+                <repository>
+                    <id>user-snapshots</id>
+                    <name>Kyligence Repository</name>
+                    <url>https://repository.kyligence.io/repository/maven-snapshots
+                    </url>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>user-public</id>
+                    <name>Kyligence Repository</name>
+                    <url>https://repository.kyligence.io/repository/maven-public
+                    </url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </pluginRepository>
+                <pluginRepository>
+                    <id>user-releases</id>
+                    <name>Kyligence Repository</name>
+                    <url>https://repository.kyligence.io/repository/maven-releases
+                    </url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </pluginRepository>
+                <pluginRepository>
+                    <id>user-snapshots</id>
+                    <name>Kyligence Repository</name>
+                    <url>https://repository.kyligence.io/repository/maven-snapshots
+                    </url>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+
+        <profile>
+            <id>oschina</id>
+            <repositories>
+                <repository>
+                    <id>nexus</id>
+                    <name>local private nexus</name>
+                    <url>http://maven.oschina.net/content/groups/public/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>nexus</id>
+                    <name>local private nexus</name>
+                    <url>http://maven.oschina.net/content/groups/public/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+        <profile>
+            <id>blank</id>
+        </profile>
+    </profiles>
+    <activeProfiles>
+        <activeProfile>public-releases-snapshots</activeProfile>
+    </activeProfiles>
+
+    <localRepository>/usr/share/maven/repository</localRepository>
+</settings>
